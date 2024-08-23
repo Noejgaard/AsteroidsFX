@@ -16,7 +16,12 @@
         <module>Player</module>
         <module>Bullet</module>
         <module>CommonBullet</module>
+        <module>CommonAsteroids</module>
+        <module>Asteroids</module>
+        <module>Collision</module>
+        <module>Enemy</module>
     </modules>
+
     <properties>
         <java>java</java>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>        

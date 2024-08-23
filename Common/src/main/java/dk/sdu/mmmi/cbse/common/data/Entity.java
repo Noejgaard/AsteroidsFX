@@ -11,7 +11,27 @@ public class Entity implements Serializable {
     private double x;
     private double y;
     private double rotation;
-            
+    private double height;
+    private double width;
+
+    private int health;
+    private boolean isHit;
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public boolean isHit() {
+        return isHit;
+    }
+
+    public void setHit(boolean hit) {
+        isHit = hit;
+    }
 
     public String getID() {
         return ID.toString();
@@ -51,6 +71,20 @@ public class Entity implements Serializable {
     public double getRotation() {
         return rotation;
     }
-        
 
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
 }

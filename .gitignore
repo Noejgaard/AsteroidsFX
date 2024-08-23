@@ -26,7 +26,11 @@ replay_pid*
 /core/target/
 /Core/target/
 /Common/target/
+/CommonAsteroids/target/
 /Player/target/
 /Bullet/target/
+/Enemy/target/
+/Asteroids/target/
+/Collision/target/
 /CommonBullet/target/
 /.idea/

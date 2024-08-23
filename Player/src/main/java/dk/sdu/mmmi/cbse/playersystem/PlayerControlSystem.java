@@ -1,5 +1,5 @@
 package dk.sdu.mmmi.cbse.playersystem;
-
+import dk.sdu.mmmi.cbse.common.bullet.Bullet;
 import dk.sdu.mmmi.cbse.common.bullet.BulletSPI;
 import dk.sdu.mmmi.cbse.common.data.Entity;
 import dk.sdu.mmmi.cbse.common.data.GameData;
@@ -31,6 +31,12 @@ public class PlayerControlSystem implements IEntityProcessingService {
                 player.setX(player.getX() + changeX);
                 player.setY(player.getY() + changeY);
             }
+
+            if(gameData.getKeys().isPressed(GameKeys.SPACE)){
+                for(BulletSPI bulletSPI: getBulletSPIs()){
+                    world.addEntity(bulletSPI.createBullet(player,gameData));
+                }
+            }
             
         if (player.getX() < 0) {
             player.setX(1);
@@ -47,8 +53,14 @@ public class PlayerControlSystem implements IEntityProcessingService {
         if (player.getY() > gameData.getDisplayHeight()) {
             player.setY(gameData.getDisplayHeight()-1);
         }
-            
-                                        
+            // Remove player if hit
+            if(player.isHit()){
+                player.setHealth(player.getHealth() - 1);
+                player.setHit(false);
+                if(player.getHealth() < 0){
+                    world.removeEntity(player);
+                }
+            }
         }
     }
 
